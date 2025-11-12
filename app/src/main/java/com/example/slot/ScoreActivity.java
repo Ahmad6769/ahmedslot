@@ -24,7 +24,7 @@ public class ScoreActivity extends AppCompatActivity {
         scoreTextView = findViewById(R.id.totalCountID);
         gamesplayedTextView = findViewById(R.id.gamesPlayedID);
         back = findViewById(R.id.BackID);
-        scoreTextView.setText("Total wins:"+MainActivity.countAll);
+        scoreTextView.setText("Total wins:"+MainActivity.count1);
         gamesplayedTextView.setText("games played:"+MainActivity.gamesPlayed);
 
         Intent mainAC = new Intent(ScoreActivity.this, MainActivity.class);

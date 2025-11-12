@@ -13,12 +13,13 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-    private int a, b, c, d, e, f, num, count, played;
-    private TextView at, bt, ct, dt, et, ft, numt, countWin;
+    private int random1, random2, random3, random4, random5, random6;
+    private int  num, count, played;
+    private TextView num1, num2, num3, num4, num5, num6, numt, countWin;
     private Button start,newGame,score;
 
-    public static int countAll, gamesPlayed;
-    private boolean isRunning; // Renamed for clarity
+    public static int count1, gamesPlayed;
+    private boolean Run; // Renamed for clarity
     private Handler handler;
     private Runnable numberGeneratorRunnable;
 
@@ -29,12 +30,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         start = findViewById(R.id.button);
-        at = findViewById(R.id.aID);
-        bt = findViewById(R.id.bID);
-        ct = findViewById(R.id.cID);
-        dt = findViewById(R.id.dID);
-        et = findViewById(R.id.eID);
-        ft = findViewById(R.id.fID);
+        num1 = findViewById(R.id.aID);
+        num2 = findViewById(R.id.bID);
+        num3 = findViewById(R.id.cID);
+        num4 = findViewById(R.id.dID);
+        num5 = findViewById(R.id.eID);
+        num6 = findViewById(R.id.fID);
         numt = findViewById(R.id.numID);
         countWin = findViewById(R.id.countWinID);
         newGame = findViewById(R.id.newGameID);
@@ -42,34 +43,34 @@ public class MainActivity extends AppCompatActivity {
         count=0;
         played=0;
         gamesPlayed=0;
-        countAll=0;
+        count1=0;
         Intent scoreAc = new Intent(MainActivity.this, ScoreActivity.class);
 
         // --- Initial setup for the 6 static numbers ---
-        a = (int) (Math.random() * 39) + 1;
-        b = (int) (Math.random() * 39) + 1;
-        c = (int) (Math.random() * 39) + 1;
-        d = (int) (Math.random() * 39) + 1;
-        e = (int) (Math.random() * 39) + 1;
-        f = (int) (Math.random() * 39) + 1;
+        random1 = (int) (Math.random() * 39) + 1;
+        random2 = (int) (Math.random() * 39) + 1;
+        random3 = (int) (Math.random() * 39) + 1;
+        random4 = (int) (Math.random() * 39) + 1;
+        random5 = (int) (Math.random() * 39) + 1;
+        random6 = (int) (Math.random() * 39) + 1;
 
-        at.setText(String.valueOf(a));
-        bt.setText(String.valueOf(b));
-        ct.setText(String.valueOf(c));
-        dt.setText(String.valueOf(d));
-        et.setText(String.valueOf(e));
-        ft.setText(String.valueOf(f));
+        num1.setText(String.valueOf(random1));
+        num2.setText(String.valueOf(random2));
+        num3.setText(String.valueOf(random3));
+        num4.setText(String.valueOf(random4));
+        num5.setText(String.valueOf(random5));
+        num6.setText(String.valueOf(random6));
 
         // --- State and Handler setup ---
-        isRunning = false; // The process is not running initially
+        Run = false; // The process is not running initially
         handler = new Handler(Looper.getMainLooper());
 
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                isRunning = !isRunning;
+                Run = !Run;
 
-                if (isRunning&&played<6) {
+                if (Run&&played<6) {
                     start.setText("Stop");
                     start.setBackgroundColor(Color.RED);
                     numberGeneratorRunnable = new Runnable() {
@@ -86,34 +87,34 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     start.setText("Start");
                     start.setBackgroundColor(Color.GREEN);
-                    if (num==a&&played<6) {
-                        at.setBackgroundColor(Color.RED);
+                    if (num==random1&&played<6) {
+                        num1.setBackgroundColor(Color.RED);
                         count++;
 
                     }
-                    if(num==b&&played<6) {
-                        bt.setBackgroundColor(Color.RED);
+                    if(num==random2&&played<6) {
+                        num2.setBackgroundColor(Color.RED);
                         count++;
                         countWin.setText(count+" of 6");
 
                     }
-                    if(num==c&&played<6) {
-                        ct.setBackgroundColor(Color.RED);
+                    if(num==random3&&played<6) {
+                        num3.setBackgroundColor(Color.RED);
                         count++;
                         countWin.setText(count+" of 6");
                     }
-                    if(num==d&&played<6) {
-                        dt.setBackgroundColor(Color.RED);
+                    if(num==random4&&played<6) {
+                        num4.setBackgroundColor(Color.RED);
                         count++;
                         countWin.setText(count+" of 6");
                     }
-                    if(num==e&&played<6) {
-                        et.setBackgroundColor(Color.RED);
+                    if(num==random5&&played<6) {
+                        num5.setBackgroundColor(Color.RED);
                         count++;
                         countWin.setText(count+" of 6");
                     }
-                    if(num==f&&played<6) {
-                        ft.setBackgroundColor(Color.RED);
+                    if(num==random6&&played<6) {
+                        num6.setBackgroundColor(Color.RED);
                         count++;
                         countWin.setText(count+" of 6");
                     }
@@ -128,28 +129,28 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (played>5)
-                    a = (int) (Math.random() * 39) + 1;
-                b = (int) (Math.random() * 39) + 1;
-                c = (int) (Math.random() * 39) + 1;
-                d = (int) (Math.random() * 39) + 1;
-                e = (int) (Math.random() * 39) + 1;
-                f = (int) (Math.random() * 39) + 1;
+                    random1 = (int) (Math.random() * 39) + 1;
+                    random2 = (int) (Math.random() * 39) + 1;
+                    random3 = (int) (Math.random() * 39) + 1;
+                    random4 = (int) (Math.random() * 39) + 1;
+                    random5 = (int) (Math.random() * 39) + 1;
+                    random6 = (int) (Math.random() * 39) + 1;
 
-                at.setText(String.valueOf(a));
-                bt.setText(String.valueOf(b));
-                ct.setText(String.valueOf(c));
-                dt.setText(String.valueOf(d));
-                et.setText(String.valueOf(e));
-                ft.setText(String.valueOf(f));
+                num1.setText(String.valueOf(random1));
+                num2.setText(String.valueOf(random2));
+                num3.setText(String.valueOf(random3));
+                num4.setText(String.valueOf(random4));
+                num5.setText(String.valueOf(random5));
+                num6.setText(String.valueOf(random6));
 
-                at.setBackgroundColor(Color.WHITE);
-                bt.setBackgroundColor(Color.WHITE);
-                ct.setBackgroundColor(Color.WHITE);
-                dt.setBackgroundColor(Color.WHITE);
-                et.setBackgroundColor(Color.WHITE);
-                ft.setBackgroundColor(Color.WHITE);
-                isRunning = false;
-                countAll+=count;
+                num1.setBackgroundColor(Color.WHITE);
+                num2.setBackgroundColor(Color.WHITE);
+                num3.setBackgroundColor(Color.WHITE);
+                num4.setBackgroundColor(Color.WHITE);
+                num5.setBackgroundColor(Color.WHITE);
+                num6.setBackgroundColor(Color.WHITE);
+                Run = false;
+                count1+=count;
                 played=0;
                 count=0;
                 gamesPlayed++;
