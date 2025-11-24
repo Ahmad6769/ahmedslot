@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         score = findViewById(R.id.ScoreID);
         nametv = findViewById(R.id.Name);
         agetv = findViewById(R.id.agetv);
+        nameEt = findViewById(R.id.name1);
 
 
         count=0;
@@ -175,7 +176,7 @@ public class MainActivity extends AppCompatActivity {
         score.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                name = nameEt.getText().toString();
+                name = nametv.getText().toString();
                 scoreAc.putExtra("NAME", name);
 
                 startActivity(scoreAc);
