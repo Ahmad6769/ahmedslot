@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="a"
+            android:text="num1"
             android:textSize="20sp"
             android:gravity="center"/>
 
@@ -28,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="b"
+            android:text="num2"
             android:textSize="20sp"
             android:gravity="center"/>
 
@@ -37,7 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="c"
+            android:text="num3"
             android:textSize="20sp"
             android:gravity="center"/>
 
@@ -46,7 +46,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="d"
+            android:text="num4"
             android:textSize="20sp"
             android:gravity="center"/>
 
@@ -55,7 +55,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="e"
+            android:text="num5"
             android:textSize="20sp"
             android:gravity="center"/>
 
@@ -64,7 +64,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="f"
+            android:text="num6"
             android:textSize="20sp"
             android:gravity="center"/>
     </LinearLayout>
@@ -73,6 +73,22 @@
         android:layout_width="match_parent"
         android:layout_height="610dp"
         android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="text"
+            android:text="Name"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/agetv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="aGE"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/numID"
@@ -120,4 +136,11 @@
                 android:text="Score" />
         </LinearLayout>
     </LinearLayout>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="127dp"
+        android:layout_height="67dp"
+        android:backgroundTint="#F44336"
+        android:text="Exit" />
 </LinearLayout>

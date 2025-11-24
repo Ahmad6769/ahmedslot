@@ -14,7 +14,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class ScoreActivity extends AppCompatActivity {
-    private TextView scoreTextView,gamesplayedTextView;
+    private TextView scoreTextView,gamesplayedTextView,nameTextView;
     private Button back;
     @SuppressLint("MissingInflatedId")
     @Override
@@ -24,8 +24,13 @@ public class ScoreActivity extends AppCompatActivity {
         scoreTextView = findViewById(R.id.totalCountID);
         gamesplayedTextView = findViewById(R.id.gamesPlayedID);
         back = findViewById(R.id.BackID);
+        nameTextView = findViewById(R.id.textView);
+        String name = getIntent().getStringExtra("NAME");
+
         scoreTextView.setText("Total wins:"+MainActivity.count1);
         gamesplayedTextView.setText("games played:"+MainActivity.gamesPlayed);
+        nameTextView.setText(name+ "s score");
+
 
         Intent mainAC = new Intent(ScoreActivity.this, MainActivity.class);
         back.setOnClickListener(new View.OnClickListener() {
